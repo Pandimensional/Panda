@@ -1,7 +1,10 @@
 #!/bin/bash
+export http_proxy=http://www-proxy.ericsson.se:8080/
+export https_proxy=https://www-proxy.ericsson.se:8080/
+export ftp_proxy=http://www-proxy.ericsson.se:8080/
 
-bundle exec veewee vbox define 'calin' 'openSUSE-12.3-x86_64-NET_EN'
-bundle exe veewe vbox build 'calin' --force --auto --nogui
+bundle exec veewee vbox define --force 'calin' 'openSUSE-11.4-DVD-x86_64'
+bundle exe veewee vbox build 'calin' --force --auto --nogui
 bundle exec veewee vbox validate 'calin'
 bundle exec vagrant basebox export 'calin' --force
 
